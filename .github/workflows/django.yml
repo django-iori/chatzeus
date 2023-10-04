@@ -47,10 +47,10 @@ jobs:
         # SSH接続して、git pullする
         echo "${{ secrets.GIT_PRIVATE_KEY }}" > private_key
         chmod 600 private_key
-        ssh -oStrictHostKeyChecking=no ${{ secrets.EC2_USER_NAME }}@${{ secrets.EC2_HOST_NAME }} -i private_key "cd GithubActionsDemo \
+        ssh -oStrictHostKeyChecking=no ${{ secrets.EC2_USER_NAME }}@${{ secrets.EC2_HOST_NAME }} -i private_key "cd chatzeus \
         && git fetch \
         && git merge --no-edit \
-        && source /home/ec2-user/.cache/pypoetry/virtualenvs/mysite-h-bqlF_s-py3.11/bin/activate \
+        && source /home/ec2-user/.cache/pypoetry/virtualenvs/chatzeus-KwToeiZz-py3.11/bin/activate \
         && poetry install \
         && python manage.py makemigrations \
         && python manage.py migrate \
