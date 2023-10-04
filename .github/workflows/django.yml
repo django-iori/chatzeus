@@ -45,9 +45,9 @@ jobs:
     - name: Deploy
       run: |
         # SSH接続して、git pullする
-        echo "${{ secrets.GIT_PRIVATE_KEY }}" > private_key
+        echo "${{ secrets.PRIVATE_KEY }}" > private_key
         chmod 600 private_key
-        ssh -oStrictHostKeyChecking=no ${{ secrets.EC2_USER_NAME }}@${{ secrets.EC2_HOST_NAME }} -i private_key "cd chatzeus \
+        ssh -oStrictHostKeyChecking=no ${{ secrets.USER_NAME }}@${{ secrets.HOST_NAME }} -i private_key "cd chatzeus \
         && git fetch \
         && git merge --no-edit \
         && source /home/ec2-user/.cache/pypoetry/virtualenvs/chatzeus-KwToeiZz-py3.11/bin/activate \
