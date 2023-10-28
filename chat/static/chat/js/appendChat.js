@@ -29,7 +29,7 @@ async function postData(text) {
   
   // APIにリクエストを送信
   const data = { text: text };
-  fetch('http://127.0.0.1:8000/test/', {
+  fetch('http://54.249.56.143/test/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
