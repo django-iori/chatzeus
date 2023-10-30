@@ -1,3 +1,5 @@
+import { endpoint } from "./env.js";
+
 const target = document.querySelector('.card-body');
 const form = document.getElementById("form");
 form.addEventListener('submit', async(e) => {
@@ -29,7 +31,8 @@ async function postData(text) {
   
   // APIにリクエストを送信
   const data = { text: text };
-  fetch('http://54.249.56.143/test/', {
+  console.log(endpoint)
+  fetch(endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

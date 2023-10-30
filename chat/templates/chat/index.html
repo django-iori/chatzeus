@@ -210,9 +210,7 @@
                     alt="avatar 3" style="width: 40px; height: 100%;">
                   <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
                     placeholder="Type message">
-                  <a class="ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a>
-                  <a class="ms-3 text-muted" href="#!"><i class="fas fa-smile"></i></a>
-                  <button type="submit"><i class="fas fa-paper-plane">送信</i></button>
+                  <button type="submit"><i class="fas fa-paper-plane"></i></button>
                 </div>
               </form>
 
@@ -220,7 +218,7 @@
         </div>
     </section>
     <script src="{% static 'chat/js/sidebars.js' %}"></script>
-    <script src="{% static 'chat/js/appendChat.js' %}"></script>
+    <script type="module" src="{% static 'chat/js/appendChat.js' %}"></script>
     </main>
   </body>
 </html>
