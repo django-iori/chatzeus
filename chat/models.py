@@ -8,12 +8,8 @@ class Room(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     roomname = models.CharField(max_length=30)
 
-class UserChat(models.Model):
+class Chat(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     content = models.TextField(blank=False, null=False)
     datetime = models.DateTimeField()
-
-class AIChat(models.Model):
-    room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    content = models.TextField(blank=False, null=False)
-    datetime = models.DateTimeField()
+    is_AI = models.BooleanField(default=False, help_text='AIの回答ならTrue')
