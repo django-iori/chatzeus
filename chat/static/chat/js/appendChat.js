@@ -1,5 +1,5 @@
 import { endpoint } from "./env.js";
-
+const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 const target = document.querySelector('.card-body');
 const form = document.getElementById("form");
 form.addEventListener('submit', async(e) => {
@@ -30,14 +30,16 @@ async function postData(text) {
   target.scrollIntoView({ block: "end" });
   
   // APIにリクエストを送信
-  const data = { text: text };
-  console.log(endpoint)
+  const body = new FormData()
+  body.append('content', text)
+
   fetch(endpoint, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'X-CSRFToken': csrftoken,
     },
-    body: JSON.stringify(data)
+    mode: 'same-origin',
+    body: body
   })
   .then(response => response.json())
   .then(data => {

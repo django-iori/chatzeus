@@ -108,6 +108,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# セッションをDBに保存
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+# CSRFトークンをセッションに格納
+CSRF_USE_SESSIONS = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
