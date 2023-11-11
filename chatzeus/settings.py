@@ -33,6 +33,8 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
 
 # Application definition
 
