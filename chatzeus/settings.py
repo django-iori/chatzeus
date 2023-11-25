@@ -61,11 +61,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = False
-
-CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS')
 
 ROOT_URLCONF = 'chatzeus.urls'
@@ -116,10 +111,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # セッションをDBに保存
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+#SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 # CSRFトークンをセッションに格納
-CSRF_USE_SESSIONS = True
+#CSRF_USE_SESSIONS = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
